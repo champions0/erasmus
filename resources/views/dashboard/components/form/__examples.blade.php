@@ -1,0 +1,8 @@
+@include('dashboard.components.form._text', (['name' => 'name', 'inputValue' => 'value']))
+@include('dashboard.components.form._number', (['name' => 'count', 'inputValue' => 'value']))
+@include('dashboard.components.form._textarea', (['name' => 'content', 'editor' => true, 'rows' => 5, 'inputValue' => 'value']))
+@include('dashboard.components.form._select', (['name' => 'type', 'data' => ['active', 'inactive'], 'selected' => 0, 'select_2' => true, 'multiple' => false]))
+@include('dashboard.components.form._radio', (['name' => 'is_checked', 'text' => ['Yes', 'No'], 'values' => [1, 0], 'selected' => 1]))
+@include('dashboard.components.form._file', (['name' => 'photo', 'multiple' => false, 'inputValue' => 'value']))
+@include('dashboard.components.form._date', (['name' => 'date', 'inputValue' => 'value']))
+@include('dashboard.components.form._datetime', (['name' => 'datetime', 'inputValue' => 'value']))
