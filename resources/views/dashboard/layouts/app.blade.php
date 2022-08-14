@@ -154,34 +154,7 @@
 <!-- /page content -->
 @yield('script')
 <script>
-    let notificationBtn = document.querySelector('.notification-icon');
-    let notifications = document.querySelector('.notifications');
 
-    notificationBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-
-        if (!notifications.classList.contains('show')) {
-            $('.dropdown-menu').removeClass('show')
-        }
-
-        if(!$(e.target).closest('.notifications').length) {
-            notifications.classList.toggle('show');
-        }
-    });
-
-    $('.dropdown-toggle').on('click', function () {
-        if(!$('.dropdown-menu').hasClass('show')) {
-            $(notifications).removeClass('show')
-        }
-    })
-
-    $(window).on('click', function () {
-        notifications.classList.remove('show');
-    })
-
-    $(notifications).on('click', function (e) {
-        e.stopPropagation();
-    })
 
     setTimeout(() => {
         const wrapper = $('.message-wrapper > .alert');

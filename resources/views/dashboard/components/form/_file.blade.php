@@ -1,16 +1,16 @@
 <div class="form-group">
     <div class="file__container">
-        <div class="file__wrapper">
-            <div class="file__image">
-                @if(!isset($notShowLabel))
-                    @if(isset($is_file) && $is_file && isset($inputValue) && $inputValue)
-                        <a href="{{$inputValue}}" download=""> Download {{$name}} </a>
+        <div class="file__wrapper @if(isset($inputValue) && $inputValue) active @endif">
+            <div class="file__image @if(isset($inputValue) && $inputValue) d-flex @endif" >
+
+                @if(isset($is_file) && $is_file && isset($inputValue) && $inputValue)
+                    <a href="{{$inputValue}}" download=""> Download {{$name}} </a>
+                @else
+                    @isset($inputValue)
+
+                        <img id="file__img" src="{{$inputValue}}">
                     @else
-                        @isset($inputValue)
-                            <img id="file__img" src="{{$user->image->path ?? ''}}">
-                        @else
-                            <img id="file__img" src="" alt="">
-                        @endif
+                        <img id="file__img" src="" alt="">
                     @endif
                 @endif
             </div>
@@ -19,7 +19,7 @@
                 <div class="file__text">No file chosen</div>
             </div>
             <div id="cancel-btn"><img src="/_dashboard/images/close.svg" alt=""></div>
-            <div class="file__name">File name here</div>
+            <div class="file__name">  </div>
         </div>
         <input type="file" name="{{$name}}" id="{{$name}}" hidden
                class="form-control {{(isset($inputClass) ? $inputClass : '')}}" {{$multiple ? 'multiple' : ''}}>

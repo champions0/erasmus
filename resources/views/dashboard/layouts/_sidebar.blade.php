@@ -6,12 +6,12 @@
                 <span>Dashboard</span>
             </a>
         </li>
-{{--        <li class="nav-item">--}}
-{{--            <a href="{{route('dashboard.activities.index')}}" class="nav-link nav__link @if(Request::is('dashboard/activities*')) active @endif">--}}
-{{--                <i class="icon-paste2"></i>--}}
-{{--                <span>Portfolio</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
+        <li class="nav-item">
+            <a href="{{route('dashboard.partners.index')}}" class="nav-link nav__link @if(Request::is('dashboard/partners*')) active @endif">
+                <i class="icon-paste2"></i>
+                <span>Partners</span>
+            </a>
+        </li>
 {{--        <li class="nav-item">--}}
 {{--            <a href="{{route('dashboard.news.index')}}" class="nav-link nav__link @if(Request::is('dashboard/news*')) active @endif">--}}
 {{--                <i class="icon-bubble-lines3"></i>--}}
