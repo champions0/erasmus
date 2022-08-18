@@ -12,6 +12,12 @@
                 <span>Partners</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{route('dashboard.materials.index')}}" class="nav-link nav__link @if(Request::is('dashboard/materials*')) active @endif">
+                <i class="icon-file-upload"></i>
+                <span>Materials</span>
+            </a>
+        </li>
 {{--        <li class="nav-item">--}}
 {{--            <a href="{{route('dashboard.news.index')}}" class="nav-link nav__link @if(Request::is('dashboard/news*')) active @endif">--}}
 {{--                <i class="icon-bubble-lines3"></i>--}}
