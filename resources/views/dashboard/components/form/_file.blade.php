@@ -1,5 +1,6 @@
 <div class="form-group">
-    <div class="file__container">
+{{--    <div class="file__container">--}}
+        <label for="{{$name}}" class=" ">{{ $labelDisplayName ?? __(ucfirst(str_replace('_', ' ', $name)))}}</label>
         <input type="file" name="{{$name}}" id="{{$name}}"
                class="form-control {{(isset($inputClass) ? $inputClass : '')}}" {{$multiple ? 'multiple' : ''}}>
         @if(isset($is_file) && $is_file && isset($inputValue) && $inputValue)
@@ -10,5 +11,5 @@
             @endif
         @endif
         {!! $errors->first($name, '<span class="form-text text-danger">:message</span>') !!}
-    </div>
+{{--    </div>--}}
 </div>
