@@ -32,6 +32,8 @@
     </div>
     <div class="col-md-6">
         <fieldset>
+            @include('dashboard.components.form._select', (['name' => 'is_home', 'data' => [0 => "No", 1 => 'Yes'],
+                'selected' => $partner->is_home ?? 0, 'select_2' => false, 'multiple' => false]))
             @include('dashboard.components.form._text', ['name' => 'website', 'inputValue' => $partner->website ?? ''])
             @include('dashboard.components.form._text', ['name' => 'facebook', 'inputValue' => $partner->facebook ?? ''])
             @include('dashboard.components.form._file', ['name' => 'image', 'multiple' => false,

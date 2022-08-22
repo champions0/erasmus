@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Support\Facades\Storage;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -21,6 +22,15 @@ class Activity extends Model
      * @var string[]
      */
     protected $fillable = ['slug', 'is_home', 'image', 'list_image'];
+
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeHome(Builder $query): Builder
+    {
+        return $query->where('is_home', 1);
+    }
 
     /**
      * @return HasOne
@@ -60,6 +70,23 @@ class Activity extends Model
             return Storage::url($value);
 
         return '';
+    }
+
+    /**
+     * @return bool
+     */
+    public function isImage(): bool
+    {
+        if ($this->list_image) {
+            $imageExtensions = ['jpg','jpeg','png'];
+
+            $explodeImage = explode('.', $this->list_image);
+            $extension = end($explodeImage);
+
+            return in_array($extension, $imageExtensions);
+        }
+
+        return true;
     }
 
     /**

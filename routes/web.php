@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ActivitiesController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MaterialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +23,12 @@ Route::group([
     'middleware' => ['localeSessionRedirect', 'localizationRedirect']
 ], function () {
 
-        Route::get('/', function () {
-            return view('home');
-        });
-
+        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::get('/about', [HomeController::class, 'about'])->name('about');
+        Route::get('/partners', [HomeController::class, 'partners'])->name('partners');
+        Route::get('/materials', [MaterialController::class, 'index'])->name('materials');
+        Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
+        Route::get('/activity/{activity:slug}', [ActivityController::class, 'show'])->name('activity.show');
     }
 );
 

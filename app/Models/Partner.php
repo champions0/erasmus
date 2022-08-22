@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Services\FileService;
 use App\Services\MlService;
+use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -20,7 +21,16 @@ class Partner extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['website', 'facebook', 'image'];
+        protected $fillable = ['website', 'facebook', 'image', 'is_home'];
+
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeHome(Builder $query): Builder
+    {
+        return $query->where('is_home', 1);
+    }
 
     /**
      * @return HasOne

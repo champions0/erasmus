@@ -151,6 +151,7 @@
     </div>
     <!-- /main content -->
 </div>
+
 <!-- /page content -->
 @yield('script')
 <script>

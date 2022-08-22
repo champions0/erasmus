@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('website')->nullable();
             $table->string('facebook')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('is_home');
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
         "laravelcollective/html": "^6.3",
-        "mcamara/laravel-localization": "^1.7"
+        "mcamara/laravel-localization": "^1.7",
+      "ext-fileinfo": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

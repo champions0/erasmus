@@ -17,6 +17,7 @@ class PartnerRequest extends FormRequest
             'image' => 'nullable|mimes:jpg,jpeg,png,bmp,tiff|max:4096',
             'website' => 'nullable|url',
             'facebook' => 'nullable|url',
+            'is_home' => 'required|in:0,1',
 
             'ml' => 'required|array',
             "ml.*.name" => 'nullable|string|max:255',

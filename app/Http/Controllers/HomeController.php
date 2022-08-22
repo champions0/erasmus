@@ -2,27 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Material;
+use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @return View
      */
-    public function __construct()
+    public function index(): View
     {
-        $this->middleware('auth');
+        $partners = Partner::home()->with('currentML')->get();
+        $activities = Activity::home()->with('currentML')->limit(6)->get();
+        $materials = Material::home()->with('currentML')->limit(6)->get();
+
+        return view('home', compact('partners', 'activities', 'materials'));
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return View
      */
-    public function index()
+    public function partners(): View
     {
-        return view('home');
+        $partners = Partner::with('currentMl')->get();
+
+        return view('partners', compact('partners'));
+    }
+
+    /**
+     * @return View
+     */
+    public function about(): View
+    {
+        return view('about');
     }
 }
