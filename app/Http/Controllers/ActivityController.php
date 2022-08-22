@@ -13,7 +13,7 @@ class ActivityController extends Controller
      */
     public function index(): View
     {
-        $activities = Activity::with('currentMl')->paginate(5);
+        $activities = Activity::with('currentMl')->ordered()->paginate(5);
 
         return view('activities', compact('activities'));
     }

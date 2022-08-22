@@ -36,6 +36,7 @@
         <fieldset>
             @include('dashboard.components.form._select', (['name' => 'is_home', 'data' => [0 => "No", 1 => 'Yes'],
                 'selected' => $material->is_home ?? 0, 'select_2' => false, 'multiple' => false]))
+            @include('dashboard.components.form._number', ['name' => 'order', 'inputValue' => $material->order ?? ''])
         </fieldset>
     </div>
 </div>

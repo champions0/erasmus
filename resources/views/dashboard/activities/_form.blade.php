@@ -40,6 +40,7 @@
                             'labelDisplayName' => 'slug' ,'inputValue' => $activity->slug ?? '']))
             @include('dashboard.components.form._select', (['name' => 'is_home', 'data' => [0 => "No", 1 => 'Yes'],
                 'selected' => $activity->is_home ?? 0, 'select_2' => false, 'multiple' => false]))
+            @include('dashboard.components.form._number', ['name' => 'order', 'inputValue' => $material->order ?? ''])
             @include('dashboard.components.form._file', ['name' => 'image', 'multiple' => false,
                 'inputValue' => $activity->image ?? '', 'inputClass'=>'input-file_item'])
             @include('dashboard.components.form._file', ['name' => 'list_image', 'multiple' => false,

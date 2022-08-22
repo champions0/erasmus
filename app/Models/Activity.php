@@ -21,7 +21,7 @@ class Activity extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['slug', 'is_home', 'image', 'list_image'];
+    protected $fillable = ['order', 'slug', 'is_home', 'image', 'list_image'];
 
     /**
      * @param Builder $query
@@ -30,6 +30,15 @@ class Activity extends Model
     public function scopeHome(Builder $query): Builder
     {
         return $query->where('is_home', 1);
+    }
+
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeOrdered(Builder $query): Builder
+    {
+        return $query->orderBy('order');
     }
 
     /**

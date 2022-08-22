@@ -13,7 +13,7 @@ class MaterialController extends Controller
      */
     public function index(): View
     {
-        $materials = Material::with('currentMl')->paginate(9);
+        $materials = Material::with('currentMl')->ordered()->paginate(9);
 
         return view('materials', compact('materials'));
     }

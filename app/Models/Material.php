@@ -19,7 +19,7 @@ class Material extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['is_home'];
+    protected $fillable = ['is_home', 'order'];
 
     /**
      * @param Builder $query
@@ -28,6 +28,15 @@ class Material extends Model
     public function scopeHome(Builder $query): Builder
     {
         return $query->where('is_home', 1);
+    }
+
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeOrdered(Builder $query): Builder
+    {
+        return $query->orderBy('order');
     }
 
     /**

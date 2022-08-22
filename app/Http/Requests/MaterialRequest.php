@@ -15,6 +15,7 @@ class MaterialRequest extends FormRequest
     {
         return [
             'is_home' => 'required|in:0,1',
+            'order' => 'nullable|numeric|max:200000',
 
             'ml' => 'required|array',
             "ml.*.name" => 'nullable|string|max:255',

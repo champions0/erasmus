@@ -23,6 +23,7 @@ class ActivityRequest extends FormRequest
 
         $rules['slug'] = 'required|string|max:100|unique:activities,slug,' . ($this->activity->id ?? '');
         $rules['is_home'] = 'required|in:1,0';
+        $rules['order'] = 'nullable|numeric|max:200000';
 
         $rules['ml'] = 'required|array';
         $rules['ml.*.name'] = 'nullable|string|max:255';

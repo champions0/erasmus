@@ -16,8 +16,8 @@ class HomeController extends Controller
     public function index(): View
     {
         $partners = Partner::home()->with('currentML')->get();
-        $activities = Activity::home()->with('currentML')->limit(6)->get();
-        $materials = Material::home()->with('currentML')->limit(6)->get();
+        $activities = Activity::home()->with('currentML')->ordered()->limit(6)->get();
+        $materials = Material::home()->with('currentML')->ordered()->limit(6)->get();
 
         return view('home', compact('partners', 'activities', 'materials'));
     }
