@@ -122,8 +122,7 @@
                                     <span class="error-span">{{$message}}</span>
                                 @enderror
                             </div>
-    {{--                        <a href="{{ route('password.request') }}" class="text-right w-100 mb-3 d-block text-decoration-underline">{{__("Forgot--}}
-    {{--                            password?")}}</a>--}}
+    {{--                        <a href="{{ route('password.request') }}" class="text-right w-100 mb-3 d-block text-decoration-underline">{{__("Forgot password?")}}</a>--}}
                             <button type="submit" class="btn btn-primary w-100 mt-4">{{__("SIGN IN")}}</button>
                         </form>
                     </div>

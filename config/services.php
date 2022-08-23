@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'ayfie' => [
+        'translate_url' => env('AYFIE_TRANSLATE_URL', 'https://portal.ayfie.com/api/translate'),
+        'key' => env('AYFIE_KEY', 'hVEOiUUKWgjNmFYEXHpImRlEabTuggwUfItMTxeXvpJIeISweo'),
+    ],
+
 ];
