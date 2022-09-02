@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use CURLFile;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -87,5 +88,57 @@ class FileService
         $driver = $driver ?: config('filesystems.default');
 
         return Storage::disk($driver);
+    }
+
+    /**
+     * @param string $path
+     * @return string
+     */
+    static function convertToPdf(string $path, string $key = null, bool $check = true): string
+    {
+        if (!$key) {
+            $key = config('services.pspdfkit.key');
+        }
+        $openFileUrl = '/images/'. time() . Str::random() . '.jpg';
+        $FileHandle = fopen('storage' . $openFileUrl, 'w+');
+
+        $curl = curl_init();
+
+        $instructions = '{
+              "parts": [
+                {
+                  "file": "document"
+                }
+              ],
+              "output": {
+                "type": "image",
+                "format": "jpg",
+                "dpi": 120
+              }
+            }';
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://api.pspdfkit.com/build',
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_POSTFIELDS => array(
+                'instructions' => $instructions,
+                'document' => new CURLFILE($path)
+            ),
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Bearer ' . $key
+            ),
+            CURLOPT_FILE => $FileHandle,
+        ));
+
+        $response = curl_exec($curl);
+        if (!$response && $check) {
+            self::convertToPdf($path, config('services.pspdfkit.second_key'), false);
+        }
+        curl_close($curl);
+
+        fclose($FileHandle);
+        return $openFileUrl;
     }
 }

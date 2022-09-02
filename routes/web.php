@@ -27,6 +27,7 @@ Route::group([
         Route::get('/about', [HomeController::class, 'about'])->name('about');
         Route::get('/partners', [HomeController::class, 'partners'])->name('partners');
         Route::get('/materials', [MaterialController::class, 'index'])->name('materials');
+        Route::get('/materials/{material}', [MaterialController::class, 'show'])->name('materials.show');
         Route::get('/activities', [ActivityController::class, 'index'])->name('activities');
         Route::get('/activity/{activity:slug}', [ActivityController::class, 'show'])->name('activity.show');
     }

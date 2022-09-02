@@ -29,7 +29,7 @@ class MaterialMl extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['lng_code', 'name', 'text', 'file'];
+    protected $fillable = ['lng_code', 'name', 'text', 'file', 'image'];
 
 
     /**
@@ -39,6 +39,17 @@ class MaterialMl extends Model
     {
         if ($this->file)
             return Storage::url($this->file);
+
+        return '';
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageAttribute($value): string
+    {
+        if ($value)
+            return Storage::url($value);
 
         return '';
     }

@@ -67,14 +67,17 @@
                                 <h3>{{$material->currentMl->name}}</h3>
                                 <p class="desc">{{$material->currentMl->text}}</p>
                                 <h5>{{__("Language")}}</h5>
-{{--                                Todo language and download--}}
+
                                 <div class="language">
-                                    <span class="active">AM</span>
-                                    <span>GB</span>
-                                    <span>UA</span>
-                                    <span>+4</span>
+                                    @foreach(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $key => $value)
+                                        <span class="@if($loop->first) active @endif material_language_item"  @if($loop->index > 2) style="display: none" @endif
+                                              data-material_id="{{$material->id}}" data-lang="{{$key}}">{{strtoupper($key)}}</span>
+                                        @if($loop->index == 2)
+                                            <span class="plus_span" style="padding: 6px">+4</span>
+                                        @endif
+                                    @endforeach
                                 </div>
-                                <a href="">Download File</a>
+                                <a href="{{route('materials.show', ['material' => $material->id, 'lng_code' => 'en'])}}">{{__("Download File")}}</a>
                             </div>
                         </div>
                     @endforeach

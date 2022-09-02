@@ -68,6 +68,6 @@ class Material extends Model
             $material = self::create($data);
         }
 
-        MlService::saveMl($material, $data['ml'], 'file');
+        MlService::saveMl($material, $data['ml'], 'file', 'image');
     }
 }

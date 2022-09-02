@@ -21,3 +21,13 @@ $(document).on('click', '.showPasswordIcon', function () {
         $(this).prev().prop("type", 'text');
     }
 })
+
+$(document).on('click', '.plus_span', function () {
+     $(this).parent().find("span").show();
+     $(this).hide();
+})
+$(document).on('click', '.material_language_item', function () {
+    $(this).parent().next("a").attr('href', "/materials/" + $(this).data('material_id') + "?lng_code=" + $(this).data('lang'));
+    $(this).parent().find("span").removeClass('active');
+    $(this).addClass('active');
+})

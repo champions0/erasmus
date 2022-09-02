@@ -24,7 +24,10 @@
 
     <header>
         <img src="/images/header-shape.png" class="header-shape">
+        <a href="{{route('home')}}"><img src="/images/logo.jpg"  height="70" width="165" class="header-shape"></a>
         <nav class="navbar navbar-expand-lg navbar-light">
+{{--            <a class="nav-link" href="{{route('home')}}"><img src="/images/syc logo.jpg" height="70" width="180"></a>--}}
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -188,7 +191,7 @@
                 </div>
             </div>
             <hr>
-            <p class="text-center copyright-text">© {{date('y')}} {{__("All rights reserved")}}</p>
+            <p class="text-center copyright-text">© {{date('Y')}} {{__("All rights reserved")}}</p>
         </div>
 
     </footer>

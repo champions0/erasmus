@@ -8,15 +8,13 @@
             <div class="container">
                 <div class="col-md-5 col-12 content">
                     <h1>{{__("What we do !")}}</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <p>{{__("Empowering young people’s entrepreneurship skills")}} </p>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="wrapper-inner">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
-                    orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-
+                <p>{{__("Promovent is a project funded by Erasmus+ aiming at empowering young people’s participation in entrepreneurship connecting the latter with the analogous challenge felt in participating European countries. The project provides young people with the knowledge, skills and motivation to plan and execute entrepreneurship activities and encourage entrepreneurial success. The project features a set of training for trainers, workshops, youth exchanges etc. Promovent is implemented by the partnership of 6 organizations: Stepanavan Youth Center NGO (Armenia), Alliance for Society Advancement (Georgia), Asociacion Juvenil Intercambia (Spain), Asociatia Se Poate (Romania), Mine Vaganti NGO (Italy), and Ukrainian Catholic University (Ukraine).")}}</p>
                 <div class="row links-block justify-content-between mt-5">
                     <div class="col-md-5 col-12 link-item">
                         <h3>{{__("Our activities")}}</h3>

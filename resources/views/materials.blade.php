@@ -20,12 +20,15 @@
                             <p class="desc">{{$material->currentMl->text}}</p>
                             <h5>{{__("Language")}}</h5>
                             <div class="language">
-                                <span class="active">AM</span>
-                                <span>GB</span>
-                                <span>UA</span>
-                                <span>+4</span>
+                                @foreach(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $key => $value)
+                                    <span class="@if($loop->first) active @endif material_language_item"  @if($loop->index > 2) style="display: none" @endif
+                                    data-material_id="{{$material->id}}" data-lang="{{$key}}">{{strtoupper($key)}}</span>
+                                    @if($loop->index == 2)
+                                        <span class="plus_span" style="padding: 6px">+4</span>
+                                    @endif
+                                @endforeach
                             </div>
-                            <a href="">{{__("Download File")}}</a>
+                            <a href="{{route('materials.show', ['material' => $material->id, 'lng_code' => 'en'])}}">{{__("Download File")}}</a>
                         </div>
                     </div>
                 @endforeach
@@ -34,24 +37,12 @@
             </div>
 
             <!-- start pagination -->
-            {{$materials->links()}}
-{{--            <div class="row justify-content-center align-items-center pagination">--}}
-{{--                <span class="mr-5">1-6 of 12</span>--}}
-{{--                <ul>--}}
-{{--                    <li>--}}
-{{--                        <a href="">--}}
-{{--                            <img src="/images/pagination-left-arrow.svg" alt="">--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li class="active"><a href="">1</a></li>--}}
-{{--                    <li><a href="">2</a></li>--}}
-{{--                    <li>--}}
-{{--                        <a href="">--}}
-{{--                            <img src="/images/pagination-right-arrow.svg" alt="">--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </div>--}}
+            <div class="row justify-content-center align-items-center pagination">
+                <span class="mr-5"> {{($materials->currentpage()-1) * $materials->perpage() + 1}} -
+                    {{$materials->currentpage() * $materials->perpage() > $materials->total() ? $materials->total() : $materials->currentpage() * $materials->perpage() }}
+                    of  {{$materials->total()}} </span>
+                    {{$materials->links()}}
+            </div>
 
             <!-- end pagination -->
         </div>

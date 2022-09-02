@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="container">
-            <p class="col-md-6 col-12 partners-page-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <p class="col-md-6 col-12 partners-page-desc">{{__("Reliable partners are the core of making this project happen.")}}</p>
 
             <div class="row block-list px-3 py-4">
 

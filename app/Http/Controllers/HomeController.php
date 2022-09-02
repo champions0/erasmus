@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Activity;
 use App\Models\Material;
 use App\Models\Partner;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -18,7 +19,6 @@ class HomeController extends Controller
         $partners = Partner::home()->with('currentML')->get();
         $activities = Activity::home()->with('currentML')->ordered()->limit(6)->get();
         $materials = Material::home()->with('currentML')->ordered()->limit(6)->get();
-
         return view('home', compact('partners', 'activities', 'materials'));
     }
 

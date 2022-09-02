@@ -36,4 +36,9 @@ return [
         'key' => env('AYFIE_KEY', 'hVEOiUUKWgjNmFYEXHpImRlEabTuggwUfItMTxeXvpJIeISweo'),
     ],
 
+    'pspdfkit' => [
+        'key' => env('PSPDFKIT_KEY', 'pdf_live_od7QGeAmpoKlm0Yepd7VJm3IQLMDf1fSdovZJwPOL5Z'),
+        'second_key' => env('PSPDFKIT_SECOND_KEY', 'pdf_live_VmL1zNZAt5fYleVK7mBcBoWxDSunxicV05vaYWRCz9N'),
+    ],
+
 ];

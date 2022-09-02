@@ -40,27 +40,13 @@
                 <!-- end loop item -->
 
             </div>
-            {{$activities->links()}}
             <!-- start pagination -->
-
-{{--            <div class="row justify-content-center align-items-center pagination">--}}
-{{--                <span class="mr-5">1-6 of 12</span>--}}
-{{--                <ul>--}}
-{{--                    <li>--}}
-{{--                        <a href="">--}}
-{{--                            <img src="/images/pagination-left-arrow.svg" alt="">--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                    <li><a href="">1</a></li>--}}
-{{--                    <li><a href="">2</a></li>--}}
-{{--                    <li>--}}
-{{--                        <a href="">--}}
-{{--                            <img src="/images/pagination-right-arrow.svg" alt="">--}}
-{{--                        </a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-
+            <div class="row justify-content-center align-items-center pagination">
+                <span class="mr-5"> {{($activities->currentpage()-1) * $activities->perpage() + 1}} -
+                    {{$activities->currentpage() * $activities->perpage() > $activities->total() ? $activities->total() : $activities->currentpage() * $activities->perpage() }}
+                    of  {{$activities->total()}} </span>
+                {{$activities->links()}}
+            </div>
             <!-- end pagination -->
         </div>
     </div>

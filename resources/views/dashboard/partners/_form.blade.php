@@ -15,7 +15,7 @@
                 @foreach(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $key => $value)
                     <li class="nav-item"><a href="#language-tab{{$key}}"
                                             class="nav-link @if($loop->first) active @endif"
-                                            data-toggle="tab">{{$key}}</a></li>
+                                            data-toggle="tab">{{$value['name']}}</a></li>
                 @endforeach
             </ul>
 
