@@ -184,6 +184,12 @@ p.page-desc {
     bottom: 50px;
     left: 0px;
     right: 0px;
+    box-sizing: border-box;
+}
+.home-banner-content {
+    background: rgba(48, 48, 48, 0.29);
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .home-banner-content-border {
@@ -192,7 +198,7 @@ p.page-desc {
     left: 0px;
     max-width: 1200px;
     width: 100%;
-    height: 100%;
+    height: 96%;
     border: 2px solid #1A438F;
     border-left: unset;
 }

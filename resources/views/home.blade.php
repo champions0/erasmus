@@ -4,7 +4,7 @@
 
     <div class="wrapper">
         <div class="home-banner">
-            <img src="/images/home-banner.png" alt="" class="img-fluid w-100 h-100">
+            <img src="/images/img.png" alt="" class="img-fluid w-100 h-100">
             <div class="home-banner-content">
                 <div class="container">
                     <h1 class="py-4">{{__("Empowering young people’s entrepreneurship skills")}}</h1>

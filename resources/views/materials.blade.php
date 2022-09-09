@@ -6,8 +6,7 @@
         <div class="container">
             <div class="col-md-6 col-12 p-0 mt-5">
                 <h1 class="page-title">{{__("Materials")}}</h1>
-                <p class="page-desc py-3">{{__("In the framework of the project several training events, workshops and youth
-                    exchanges are organized")}}</p>
+                <p class="page-desc py-3">{{__("Choose language and download materials, reports, presentations and much more.")}}</p>
             </div>
             <hr class="page-header-line">
             <div class="row block-list materials px-3 py-4">

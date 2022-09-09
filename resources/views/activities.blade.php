@@ -6,7 +6,7 @@
         <div class="container">
             <div class="col-md-6 col-12 p-0 mt-5">
                 <h1 class="page-title">{{__("Activities")}}</h1>
-                <p class="page-desc py-3">{{__("In the framework of the project several training events, workshops and youth
+                <p class="page-desc py-3">{{__("In the framework of the project several trainings events, workshops and youth
                     exchanges are organized")}}</p>
             </div>
             <hr class="page-header-line">

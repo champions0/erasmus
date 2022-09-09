@@ -25,7 +25,8 @@
     <header>
         <img src="/images/header-shape.png" class="header-shape">
         <a href="{{route('home')}}"  style="height: 70px; width: 165px; z-index: 15000">
-            <img src="/images/logo.jpg" style="height: 70px; width: 165px" height="70" width="165" class="header-shape">
+            <img src="/images/logo.jpg" style="margin-left: 16px; height: 60px; width: 141px;
+                margin-top: 2px;" height="70" width="165" class="header-shape">
         </a>
         <nav class="navbar navbar-expand-lg navbar-dark">
 {{--            <a class="nav-link" href="{{route('home')}}"><img src="/images/syc logo.jpg" height="70" width="180"></a>--}}

@@ -19,7 +19,7 @@ class MaterialRequest extends FormRequest
 
             'ml' => 'required|array',
             "ml.*.name" => 'nullable|string|max:255',
-            'ml.*.text' => 'nullable|string|max:2000',
+            'ml.*.text' => 'nullable|string|max:150',
             'ml.*.file' => 'nullable|nullable|mimes:pdf,doc,docx,ppt,pptx|max:8192',
         ];
     }
