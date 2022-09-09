@@ -28,7 +28,7 @@ class ActivityRequest extends FormRequest
         $rules['ml'] = 'required|array';
         $rules['ml.*.name'] = 'nullable|string|max:255';
         $rules['ml.*.text'] = 'nullable|string|max:30000';
-        $rules['ml.*.short_description'] = 'nullable|string|max:255';
+        $rules['ml.*.short_description'] = 'nullable|string|max:255php artisan translations:import';
 
         return $rules;
     }
