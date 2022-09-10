@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Activity extends Model
@@ -128,6 +129,7 @@ class Activity extends Model
         if ($activity) {
             $activity->update($data);
         } else {
+            $data['slug'] = Str::slug($data['ml']['en']['name']);
             $activity = self::create($data);
         }
 

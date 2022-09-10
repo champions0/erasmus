@@ -21,11 +21,11 @@ class ActivityRequest extends FormRequest
             $rules['list_image'] = 'nullable|file|mimes:jpg,jpeg,png,mp4|max:15000';
         }
 
-        $rules['slug'] = 'required|string|max:100|unique:activities,slug,' . ($this->activity->id ?? '');
         $rules['is_home'] = 'required|in:1,0';
         $rules['order'] = 'nullable|numeric|max:200000';
 
         $rules['ml'] = 'required|array';
+        $rules['ml.en.name'] = 'required|string|max:255';
         $rules['ml.*.name'] = 'nullable|string|max:255';
         $rules['ml.*.text'] = 'nullable|string|max:30000';
         $rules['ml.*.short_description'] = 'nullable|string|max:255php artisan translations:import';
