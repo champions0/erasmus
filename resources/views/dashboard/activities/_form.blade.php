@@ -24,7 +24,7 @@
                         <legend class="font-weight-semibold"><i
                                 class="icon-file-text2 mr-2"></i> {{__('Activity details')}}</legend>
                         @include('dashboard.components.form._text', (['name' => 'ml[' . $key . '][name]',
-                            'labelDisplayName' => 'name' ,'inputValue' => $activityMls[$key]->name ?? '']))
+                            'labelDisplayName' => 'Title' ,'inputValue' => $activityMls[$key]->name ?? '']))
                         @include('dashboard.components.form._textarea', (['name' => 'ml[' . $key . '][short_description]',
                                 'labelDisplayName' => 'Short Description' ,'inputValue' => $activityMls[$key]->short_description ?? '']))
                         @include('dashboard.components.form._textarea', (['name' => 'ml[' . $key . '][text]',
@@ -37,12 +37,12 @@
     <div class="col-md-6">
         <fieldset>
             @include('dashboard.components.form._select', (['name' => 'is_home', 'data' => [0 => "No", 1 => 'Yes'],
-                'selected' => $activity->is_home ?? 0, 'select_2' => false, 'multiple' => false]))
-            @include('dashboard.components.form._number', ['name' => 'order', 'inputValue' => $material->order ?? ''])
+                'labelDisplayName' => 'Display on the Home screen', 'selected' => $activity->is_home ?? 0, 'select_2' => false, 'multiple' => false]))
+            @include('dashboard.components.form._number', ['name' => 'order', 'labelDisplayName' => 'Order (placement)', 'inputValue' => $material->order ?? ''])
             @include('dashboard.components.form._file', ['name' => 'image', 'multiple' => false,
-                'inputValue' => $activity->image ?? '', 'inputClass'=>'input-file_item'])
+                'labelDisplayName' => 'Home screen image', 'inputValue' => $activity->image ?? '', 'inputClass'=>'input-file_item'])
             @include('dashboard.components.form._file', ['name' => 'list_image', 'multiple' => false,
-                'inputValue' => $activity->list_image ?? '', 'inputClass'=>'input-file_item'])
+                'labelDisplayName' => 'Image for listing view', 'inputValue' => $activity->list_image ?? '', 'inputClass'=>'input-file_item'])
         </fieldset>
     </div>
 </div>
