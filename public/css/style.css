@@ -409,7 +409,12 @@ footer .footer-inner {
     gap: 80px;
 }
 
+.contact-info-additional {
+    margin-top: 34px;
+}
+
 footer ul {
+    width: max-content;
     padding: 0px;
 }
 
@@ -418,15 +423,15 @@ footer ul li {
     margin-bottom: 8px;
 }
 
-footer ul li a {
+footer ul li a, span {
     color: #fff;
     font-weight: 400;
     font-size: 14px;
 }
 
-footer ul li svg {
-    margin-right: 5px;
-}
+/*footer ul li svg {*/
+/*    margin-right: 5px;*/
+/*}*/
 
 footer .copyright-text {
     font-weight: 400;
