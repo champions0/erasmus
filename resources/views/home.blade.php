@@ -35,8 +35,8 @@
         </div>
         <div class="activities">
             <div class="container">
-                <h2 class="home-section-title mb-4">{{__("Activities")}} 
-                    <a href="{{route('activities')}}">{{__("See All")}} 
+                <h2 class="home-section-title mb-4">{{__("Activities")}}
+                    <a href="{{route('activities')}}">{{__("View All")}}
                         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.5 11L6.5 6L1.5 1" stroke="#1A438F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
@@ -101,11 +101,11 @@
                     <h1 class="page-title">{{__("Our Partners")}}</h1>
                 </div>
                 <hr class="page-header-line mb-5">
-                <div class="row block-list partners-carousel px-3 py-4">
+                <div class="block-list partners-carousel px-3 py-4">
 
                     <!-- start loop item -->
                     @foreach($partners as $partner)
-                        <div class="col-md-4 col-12 py-5 bg-white">
+                        <div class="py-5">
                             <div class="partner-item bg-white p-4">
                                 <div class="quote-symbol">
                                     <svg width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">

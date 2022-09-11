@@ -144,8 +144,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-12 footer-inner d-flex">
-                    <div class="footer-block sitemap">
+{{--                <div class="col-md-6 col-12 footer-inner d-flex">--}}
+                    <div class="footer-block col-lg-2 col-md-3 col-12 sitemap">
                         <h5>{{__("Sitemap")}}</h5>
                         <ul>
                             <li><a href="{{route('activities')}}">{{__("Activities")}}</a></li>
@@ -154,7 +154,7 @@
                             <li><a href="{{route('partners')}}">{{__("Partners")}}</a></li>
                         </ul>
                     </div>
-                    <div class="footer-block contact-info">
+                    <div class="footer-block col-lg-6 col-md-9 col-12 contact-info">
                         <h5>{{__("Contact information")}}</h5>
                         <ul>
                             <li>
@@ -213,7 +213,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-block contact-info contact-info-additional">
+                    <div class="footer-block col-lg-4 col-md-6 col-12 contact-info contact-info-additional">
                         <ul>
                             <li>
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -247,7 +247,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+{{--                </div>--}}
             </div>
             <hr>
             <p class="text-center copyright-text">© {{date('Y')}} {{__("All rights reserved")}}</p>
