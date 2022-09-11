@@ -8,11 +8,13 @@ jQuery('.partners-carousel').slick({
             breakpoint: 991,
             settings: {
                 arrows: false,
-                slidesToShow: 1
+                slidesToShow: 1,
+                centerMode: false,
             }
         },
     ]
 });
+
 
 $(document).on('click', '.showPasswordIcon', function () {
     if ($(this).prev().prop("type") === 'text') {

@@ -35,7 +35,13 @@
         </div>
         <div class="activities">
             <div class="container">
-                <h2 class="home-section-title mb-4">{{__("Activities")}}</h2>
+                <h2 class="home-section-title mb-4">{{__("Activities")}} 
+                    <a href="{{route('activities')}}">{{__("See All")}} 
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 11L6.5 6L1.5 1" stroke="#1A438F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </a>
+                </h2>
                 <div class="row">
                     @foreach($activities as $activity)
                     <div class="col-md-4 col-12 item">
@@ -85,6 +91,7 @@
 
                 </div>
                 <a href="{{route('materials')}}" class="see-all">{{__("See All")}}</a>
+                <a href="{{route('materials')}}" class="see-all mobile">{{__("View All")}}</a>
             </div>
         </div>
 
@@ -99,7 +106,7 @@
                     <!-- start loop item -->
                     @foreach($partners as $partner)
                         <div class="col-md-4 col-12 py-5 bg-white">
-                            <div class="partner-item bg-white p-4 px-5">
+                            <div class="partner-item bg-white p-4">
                                 <div class="quote-symbol">
                                     <svg width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M9.25423 0.0181247C8.04669 -0.156181 7.18646 0.989987 7.35194 2.19876L7.46579 3.03035C7.56839 3.77985 8.27836 4.27743 9.01007 4.46945C9.45313 4.58573 9.86894 4.78813 10.2338 5.0651C10.5986 5.34207 10.9053 5.68819 11.1364 6.08369C11.3675 6.4792 11.5184 6.91634 11.5805 7.37017C11.6426 7.824 11.6148 8.28561 11.4985 8.72867C11.4744 8.82028 11.4467 8.91072 11.4154 8.99979H3.53162C1.9438 8.99979 0.656616 10.287 0.656616 11.8748V19.0623C0.656616 20.6501 1.9438 21.9373 3.53162 21.9373H12.1566C13.7444 21.9373 15.0316 20.6501 15.0316 19.0623V11.8748C15.0316 11.8161 15.0299 11.7579 15.0264 11.7001C15.3513 11.1187 15.6022 10.4972 15.772 9.85017C16.0355 8.84592 16.0987 7.79958 15.9579 6.77091C15.817 5.74224 15.475 4.75139 14.9512 3.85491C14.4275 2.95844 13.7323 2.1739 12.9053 1.5461C12.0783 0.918297 11.1358 0.459525 10.1316 0.195975C9.84214 0.120018 9.54922 0.0607063 9.25423 0.0181247Z" fill="#153180"/>
@@ -131,6 +138,7 @@
 
                 </div>
                 <a href="{{route('partners')}}" class="see-all mt-5">{{__("See All")}}</a>
+                <a href="{{route('partners')}}" class="see-all mt-5 mobile">{{__("View All")}}</a>
             </div>
         </div>
     </div>

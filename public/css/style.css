@@ -316,7 +316,7 @@ p.page-desc {
 .partner-item {
     position: relative;
     border-radius: 10px;
-    min-height: 350px;
+    min-height: 600px;
     box-shadow: 0px 16px 24px -8px rgba(66, 90, 112, 0.25);
     border: 1px solid rgba(66, 90, 112, 0.25);
     margin-bottom: 20px;
@@ -351,7 +351,7 @@ p.page-desc {
 .partner-item .shape-block .shape-block-inner h4 {
     color: #fff;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 15spx;
     font-family: 'Inter', sans-serif;
 }
 
@@ -460,7 +460,6 @@ header .navbar {
     width: 100%;
     margin-left: auto;
     height: 100%;
-    padding-right: 50px;
     justify-content: flex-end;
 }
 
@@ -680,6 +679,26 @@ header #navbarDropdown1 ~ .dropdown-menu {
     margin: 7rem 0;
 }
 
+.home-section-title a {
+    display: none;
+}
+
+.project-page img {
+    max-width: 100%;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 10px 0px;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+.see-all.mobile {
+    display: none;
+}
 
 @media  (min-width: 1550px) {
     .navbar-expand-lg .navbar-nav {
@@ -699,9 +718,62 @@ header #navbarDropdown1 ~ .dropdown-menu {
 @media (max-width: 991px) {
 
     .navbar-collapse {
-        padding-top: 30px;
-    !important;
+        padding-top: 30px !important;
     }
 
+}
+
+@media (max-width: 767px) {
+    .what-we-do .left-column a {
+        width: 100%;
+        display: block;
+        text-align: center;
+        background: #1A438F;
+        color: #fff;
+    }
+    .banner .content h1, .home-banner-content h1 {
+        font-size: 35px;
+    }
+    .activities .row {
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .activities .item {
+        display: inline-block;
+        width: 80%;
+    }
+    .home-section-title {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .home-section-title a {
+        font-size: 16px;
+        color: #1A438F;
+        font-weight: 500;
+        display: block;
+    }
+    .home-section-title a svg {
+        width: 6px;
+        margin-left: 3px;
+    }
+    .home-banner-content-border {
+        display: none;
+    }
+    .see-all {
+        border-radius: 4px;
+        width: 100%;
+        text-align: center;
+        padding: 10px 34px;
+        display: none;
+    }
+    .activities .see-all {
+        display: none;
+    }
+    .see-all.mobile {
+        display: block;
+    }
 }
 
