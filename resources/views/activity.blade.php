@@ -7,7 +7,7 @@
             <img src="{{$activity->image}}" alt="" class="img-fluid w-100 h-100">
             <div class="container">
                 <div class="col-md-5 col-12 content">
-                    <h1>Activity 1</h1>
+                    <h1>{{$activity->currentMl->name}}</h1>
                     <p>{{$activity->currentMl->short_descripiton}}</p>
                 </div>
             </div>

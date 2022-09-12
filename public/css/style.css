@@ -422,6 +422,10 @@ footer ul li {
     margin-bottom: 8px;
 }
 
+footer ul li .mail-link {
+    border-bottom: 1px solid #0077FF;
+}
+
 footer ul li a, span {
     color: #fff;
     font-weight: 400;
