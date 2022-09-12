@@ -24,22 +24,34 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('password'),
             ],
             [
-                'name' => 'Admin 0',
-                'email' => 'admin0@example.com',
+                'name' => 'Admin',
+                'email' => 'asa4you@outlook.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('password'),
+                'password' => Hash::make('asa4you*0A5'),
             ],
             [
-                'name' => 'Admin 1',
-                'email' => 'admin1@example.com',
+                'name' => 'Admin',
+                'email' => 'mvngo@gmail.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('password'),
+                'password' => Hash::make('mvngo7*E6'),
             ],
             [
-                'name' => 'Admin 2',
-                'email' => 'admin2@example.com',
+                'name' => 'Admin',
+                'email' => 'contact@asociatiasepoate.ro',
                 'email_verified_at' => now(),
-                'password' => Hash::make('password'),
+                'password' => Hash::make('contact9J*4'),
+            ],
+            [
+                'name' => 'Admin',
+                'email' => 'info@intercambia.org',
+                'email_verified_at' => now(),
+                'password' => Hash::make('infoS7*4'),
+            ],
+            [
+                'name' => 'Admin',
+                'email' => 'sophie.holub@ucu.edu.ua',
+                'email_verified_at' => now(),
+                'password' => Hash::make('sophie.holub2T4*'),
             ],
 
         ];
