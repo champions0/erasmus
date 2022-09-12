@@ -8,7 +8,7 @@
             <div class="home-banner-content">
                 <div class="container">
                     <h1 class="py-4">{{__("Empowering young people’s entrepreneurship skills")}}</h1>
-                    <div class="home-banner-content-border"></div>
+{{--                    <div class="home-banner-content-border"></div>--}}
                 </div>
             </div>
         </div>
