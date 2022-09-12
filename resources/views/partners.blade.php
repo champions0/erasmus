@@ -3,7 +3,7 @@
 @section('content')
     <div class="wrapper">
         <div class="banner">
-            <img src="/images/banner.png" alt="" class="img-fluid w-100 h-100">
+            <img src="/images/our_partners.png" alt="" class="img-fluid w-100 h-100">
             <div class="container">
                 <div class="col-md-5 col-12 content">
                     <h1>{{__("Our Partners")}}</h1>

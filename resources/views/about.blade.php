@@ -4,7 +4,7 @@
 
     <div class="wrapper">
         <div class="banner">
-            <img src="/images/banner.png" alt="" class="img-fluid w-100 h-100">
+            <img src="/images/about.png" alt="" class="img-fluid w-100 h-100">
             <div class="container">
                 <div class="col-md-5 col-12 content">
                     <h1>{{__("What we do !")}}</h1>
