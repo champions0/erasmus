@@ -42,6 +42,7 @@
                         </svg>
                     </a>
                 </h2>
+                <hr class="page-header-line">
                 <div class="row">
                     @foreach($activities as $activity)
                     <div class="col-md-4 col-12 item">

@@ -719,6 +719,9 @@ header #navbarDropdown1 ~ .dropdown-menu {
     .navbar-collapse {
         padding-top: 30px !important;
     }
+    header .navbar {
+        width: fit-content;
+    }
 
 }
 
