@@ -25,11 +25,11 @@
     <header>
         <img src="/images/header-shape.png" class="header-shape">
         <a href="{{route('home')}}"  style="height: 70px; width: 165px; z-index: 15000">
-            <img src="/images/logo.jpg" style="margin-left: 16px; height: 60px; width: 141px;
+            <img src="/images/ProMovEntLogo.jpg" style="margin-left: 16px; height: 60px; width: 141px;
                 margin-top: 2px;" height="70" width="165" class="header-shape">
         </a>
         <nav class="navbar navbar-expand-lg navbar-dark">
-{{--            <a class="nav-link" href="{{route('home')}}"><img src="/images/syc logo.jpg" height="70" width="180"></a>--}}
+{{--            <a class="nav-link" href="{{route('home')}}"><img src="/images/syc ProMovEntLogo.jpg" height="70" width="180"></a>--}}
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,12 +59,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ strtoupper(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale())}}
+                            {{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales()[\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale()]['displayName']}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $localCode => $langItem)
                                 @if(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() != $localCode)
-                                    <a class="dropdown-item"  href="{{\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($localCode, null, [], true) }}">{{strtoupper($localCode)}}</a>
+                                    <a class="dropdown-item"  href="{{\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($localCode, null, [], true) }}">{{$langItem['displayName']}}</a>
                                 @endif
                             @endforeach
                         </div>
@@ -234,7 +234,7 @@
 {{--                                        <path d="M12.6716 3.8876C12.6716 4.24603 12.3731 4.54472 12.0149 4.54472C11.6567 4.54472 11.3582 4.24603 11.3582 3.8876C11.3582 3.52916 11.6567 3.23047 12.0149 3.23047C12.388 3.23047 12.6716 3.52916 12.6716 3.8876Z" fill="white"/>--}}
 {{--                                    </svg>--}}
 {{--                                </a>--}}
-                                <a href="https://www.facebook.com/Stepyouthcenter/" target="_blank" class="mr-2">
+                                <a href="https://www.facebook.com/CBPromovent" target="_blank" class="mr-2">
                                     <svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.75132 3.12323V0.748619C7.75132 0.748619 5.33493 0.71875 5.17085 0.71875C4.08198 0.71875 2.50088 1.95833 2.50088 3.37712C2.50088 4.9602 2.50088 5.91602 2.50088 5.91602H0.233643V8.60426H2.47105V15.2651H5.11119V8.57439H7.453L7.75132 5.94588H5.15593C5.15593 5.94588 5.15593 4.33294 5.15593 4.01931C5.15593 3.55634 5.499 3.1083 6.02106 3.1083C6.37905 3.1083 7.75132 3.12323 7.75132 3.12323Z" fill="#E9E9EC"/>
                                     </svg>
@@ -250,6 +250,10 @@
 {{--                </div>--}}
             </div>
             <hr>
+            <div class="d-flex">
+                <img src="{{asset('images/Flag_of_Europe.svg')}}" width="100px">
+                <span class="ml-2" style="margin-top: 13px">{{__("This website is funded by the European Union. Its contents are the sole responsibility of the project consortium partners and do not necessarily reflect the views of the European Union.")}}</span>
+            </div>
             <p class="text-center copyright-text">© {{date('Y')}} {{__("All rights reserved")}}</p>
         </div>
 

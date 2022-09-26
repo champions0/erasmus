@@ -78,7 +78,7 @@
                                 <div class="language">
                                     @foreach(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $key => $value)
                                         <span class="@if($loop->first) active @endif material_language_item"  @if($loop->index > 2) style="display: none" @endif
-                                              data-material_id="{{$material->id}}" data-lang="{{$key}}">{{strtoupper($key)}}</span>
+                                              data-material_id="{{$material->id}}" data-lang="{{$key}}">{{$value['displayName']}}</span>
                                         @if($loop->index == 2)
                                             <span class="plus_span" style="padding: 6px">+4</span>
                                         @endif
