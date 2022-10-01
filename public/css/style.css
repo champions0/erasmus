@@ -300,6 +300,16 @@ p.page-desc {
     padding: 6px;
 }
 
+.img-inherit {
+    color: inherit !important;
+    text-decoration: inherit !important;
+    background-color: inherit !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border: inherit !important;
+    border-radius: inherit !important;
+}
+
 .block-list.materials .item a:hover {
     background-color: #fff;
     color: #1A438F;

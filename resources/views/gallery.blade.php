@@ -13,9 +13,12 @@
 
                 <!-- start loop item -->
                 @foreach($images as $image)
-                    <div class="col-md-6 col-12 mb-4">
+                    <div class="col-md-4 col-12 mb-4">
                         <div class="item position-relative">
-                            <img src="{{$image->path}}" alt="" class="img-fluid w-100 h-100">
+                            <a data-fancybox="group-1" href="{{$image->path}}" class="colorbox img-inherit">
+                                <img src="{{$image->path}}" alt="" class="img-fluid w-100 h-100">
+                            </a>
+
                             <div class="home-banner-content">
                                 <div class="container">
                                     <h2 class="text-white py-4">{{__($image->activity->currentML->name)}}</h2>

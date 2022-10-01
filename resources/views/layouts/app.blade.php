@@ -272,5 +272,19 @@
             });
         </script>
     @endif
+    <script src="{{ asset('/plugins/jquery.min.js') }}"></script>
+    <script src="{{ asset('/plugins/colorbox/jquery.colorbox-min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('/plugins/colorbox/example5/colorbox.css') }}">
+    <script>
+        $(function(){
+            $("a.colorbox").colorbox({ opacity:"0.7", maxWidth:"90%", maxHeight:"90%" });
+        });
+        // $("a[rel='colorbox']").colorbox({
+        //     maxWidth:"90%",
+        //     maxHeight:"90%",
+        //     opacity:"0.7",
+        // });
+    </script>
 </body>
+
 </html>
