@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Image;
 use App\Models\Material;
 use App\Models\Partner;
 use App\Services\FileService;
@@ -19,7 +20,8 @@ class HomeController extends Controller
         $partners = Partner::home()->with('currentML')->get();
         $activities = Activity::home()->with('currentML')->ordered()->limit(6)->get();
         $materials = Material::home()->with('currentML')->ordered()->limit(6)->get();
-        return view('home', compact('partners', 'activities', 'materials'));
+        $images = Image::inRandomOrder()->with('activity.currentML')->limit(10)->get();
+        return view('home', compact('partners', 'activities', 'materials', 'images'));
     }
 
     /**
@@ -30,6 +32,16 @@ class HomeController extends Controller
         $partners = Partner::with('currentMl')->get();
 
         return view('partners', compact('partners'));
+    }
+
+    /**
+     * @return View
+     */
+    public function gallery(): View
+    {
+        $images = Image::with('activity.currentMl')->paginate(20);
+
+        return view('gallery', compact('images'));
     }
 
     /**

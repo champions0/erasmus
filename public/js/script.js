@@ -15,6 +15,15 @@ jQuery('.partners-carousel').slick({
     ]
 });
 
+jQuery('#gallery').slick({
+    centerMode: true,
+    arrows: true,
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3
+});
+
 
 $(document).on('click', '.showPasswordIcon', function () {
     if ($(this).prev().prop("type") === 'text') {

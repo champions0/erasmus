@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use CURLFile;
+use DOMDocument;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -39,7 +40,7 @@ class FileService
         $fileName = uniqid() . Str::slug($image->getClientOriginalName(), '.');
         $filePath = '/' . $path . '/' . $fileName;
         $storage->put($filePath, file_get_contents($image), 'public');
-        if(count($widths)){
+        if (count($widths)) {
             self::attachmentThumb($image, $filePath, $widths, $storage);
         }
 
@@ -67,7 +68,7 @@ class FileService
      * @param $storage
      * @param $width
      */
-    public static function attachment($input, $filePath,  $width, $storage): void
+    public static function attachment($input, $filePath, $width, $storage): void
     {
         try {
             $img = Image::make($input)->resize($width, null, function ($constraint) {
@@ -76,7 +77,8 @@ class FileService
             $filePath = "thumb/$width/" . $filePath;
             $storage->put($filePath, $img->getContent(), 'public');
 
-        } catch (\Exception $e) {}
+        } catch (\Exception $e) {
+        }
     }
 
     /**
@@ -99,7 +101,7 @@ class FileService
         if (!$key) {
             $key = config('services.pspdfkit.key');
         }
-        $openFileUrl = '/images/'. time() . Str::random() . '.jpg';
+        $openFileUrl = '/images/' . time() . Str::random() . '.jpg';
         $FileHandle = fopen('storage' . $openFileUrl, 'w+');
 
         $curl = curl_init();
@@ -140,5 +142,21 @@ class FileService
 
         fclose($FileHandle);
         return $openFileUrl;
+    }
+
+    static function getImagesFromHtml(string $html): array
+    {
+        $doc = new DOMDocument();
+        $doc->loadHTML($html);
+
+        $xml = simplexml_import_dom($doc);
+        $images = $xml->xpath('//img');
+        $srcs = [];
+        foreach ($images as $img) {
+
+            $srcs[] = (string)$img['src'];
+        }
+
+        return $srcs;
     }
 }

@@ -62,6 +62,31 @@
         <div class="materials-section">
             <div class="container">
                 <div class="col-md-6 col-12 p-0 mt-5">
+                    <h1 class="page-title">{{__("Gallery")}}</h1>
+                </div>
+                <hr class="page-header-line">
+                <div class="row block-list materials px-3" id="gallery">
+                    @foreach($images as $image)
+                        <div class="col-md-4 col-12 mb-4">
+                            <div class="item position-relative">
+                                <img src="{{$image->path}}" alt="" class="img-fluid w-100 h-100">
+                                <div class="home-banner-content">
+                                    <div class="container">
+                                        <h2 class="text-white py-4">{{__($image->activity->currentML->name)}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <a href="{{route('gallery')}}" class="see-all">{{__("See All")}}</a>
+                <a href="{{route('gallery')}}" class="see-all mobile">{{__("View All")}}</a>
+            </div>
+        </div>
+
+        <div class="materials-section">
+            <div class="container">
+                <div class="col-md-6 col-12 p-0 mt-5">
                     <h1 class="page-title">{{__("Materials")}}</h1>
                 </div>
                 <hr class="page-header-line">

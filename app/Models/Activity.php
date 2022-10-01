@@ -59,6 +59,14 @@ class Activity extends Model
     }
 
     /**
+     * @return HasMany
+     */
+    public function images(): HasMany
+    {
+        return $this->hasMany(Image::class);
+    }
+
+    /**
      * @param $value
      * @return string
      */
@@ -128,11 +136,18 @@ class Activity extends Model
 
         if ($activity) {
             $activity->update($data);
+            $activity->images()->delete();
         } else {
             $data['slug'] = Str::slug($data['ml']['en']['name']);
             $activity = self::create($data);
         }
 
+        if ($data['ml']['en']['text']) {
+
+            foreach (FileService::getImagesFromHtml($data['ml']['en']['text']) as $image) {
+                $activity->images()->create(['path' => $image]);
+            }
+        }
         MlService::saveMl($activity, $data['ml']);
     }
 }
