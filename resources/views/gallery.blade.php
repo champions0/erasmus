@@ -9,11 +9,11 @@
                 <p class="page-desc py-3">{{__("Moments from our activities")}}</p>
             </div>
             <hr class="page-header-line">
-            <div class="row block-list materials px-3 py-4">
+            <div class="row block-list gallery px-1 py-4">
 
                 <!-- start loop item -->
                 @foreach($images as $image)
-                    <div class="col-md-4 col-12 mb-4">
+                    <div class="col-md-6 col-12">
                         <div class="item position-relative">
                             <a data-fancybox="group-1" href="{{$image->path}}" class="colorbox img-inherit">
                                 <img src="{{$image->path}}" alt="" class="img-fluid w-100 h-100">
@@ -21,7 +21,7 @@
 
                             <div class="home-banner-content">
                                 <div class="container">
-                                    <h2 class="text-white py-4">{{__($image->activity->currentML->name)}}</h2>
+                                    <h2 class="text-white py-3 mb-0">{{__($image->activity->currentML->name)}}</h2>
                                 </div>
                             </div>
                         </div>

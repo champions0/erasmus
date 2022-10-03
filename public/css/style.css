@@ -713,6 +713,68 @@ header #navbarDropdown1 ~ .dropdown-menu {
     display: none;
 }
 
+.block-list.gallery .item {
+    height: 325px;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+.block-list.gallery .item a {
+    height: 100%;
+}
+
+.block-list.gallery h2 {
+    font-size: 14px;
+}
+
+.block-list.gallery .home-banner-content {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.block-list.gallery img {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#cboxBottomLeft {
+    background-position-y: -67px !important;
+}
+
+#cboxBottomRight {
+    background-position-y: -67px !important;
+}
+
+#cboxBottomCenter {
+    height: 8px !important;
+}
+
+#cboxClose {
+    top: 0px;
+    bottom: unset;
+}
+
+#gallery .item {
+    height: 470px;
+}
+
+#gallery .slick-arrow.slick-next {
+    right: 40px !important;
+    z-index: 5;
+}
+
+#gallery .slick-arrow.slick-prev {
+    left: 40px !important;
+    z-index: 5;
+}
+
+#gallery .slick-arrow:before {
+    opacity: 1 !important;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
 @media  (min-width: 1550px) {
     .navbar-expand-lg .navbar-nav {
         margin-left: 0px !important;
@@ -793,3 +855,11 @@ header #navbarDropdown1 ~ .dropdown-menu {
     }
 }
 
+@media (max-width: 580px) {
+    .block-list.gallery .item {
+        height: 220px;
+    }
+    #gallery .item {
+        height: 300px;
+    }
+}

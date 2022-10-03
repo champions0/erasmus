@@ -67,19 +67,18 @@
                     <h1 class="page-title">{{__("Gallery")}}</h1>
                 </div>
                 <hr class="page-header-line">
-                <div class="row block-list materials px-3" id="gallery">
+                <div class="block-list gallery py-4" id="gallery">
+{{--                <div class="block-list gallery py-4" id="{{ count($images) >= 3 ? 'gallery' : '' }}">--}}
                     @foreach($images as $image)
-                        <div class="col-md-4 col-12 mb-4">
-                            <div style="overflow: hidden; width: auto;" class="item position-relative">
-                                <a data-fancybox="group-1" href="{{ $image->path }}" class="colorbox img-inherit"
-                                >
-                                    <img style="width: 500px; height:300px; object-fit: cover;" src="{{$image->path}}"
-                                         alt="" class="img-fluid">
-                                </a>
-                                <div class="home-banner-content">
-                                    <div class="container">
-                                        <h2 class="text-white py-4">{{__($image->activity->currentML->name)}}</h2>
-                                    </div>
+                        <div class="item position-relative px-2">
+                            <a data-fancybox="group-1" href="{{ $image->path }}" class="colorbox img-inherit"
+                            >
+                                <img src="{{$image->path}}"
+                                     alt="" class="img-fluid w-100 h-100">
+                            </a>
+                            <div class="home-banner-content" style="width: 95%; left: 0px; right: 0px; margin: 0px auto;">
+                                <div class="container">
+                                    <h2 class="text-white py-4 mb-0">{{__($image->activity->currentML->name)}}</h2>
                                 </div>
                             </div>
                         </div>

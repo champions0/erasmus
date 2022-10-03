@@ -16,12 +16,19 @@ jQuery('.partners-carousel').slick({
 });
 
 jQuery('#gallery').slick({
-    centerMode: true,
+    slidesToShow: 3,
+    slideToScroll: 1,
     arrows: true,
     dots: false,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    responsive: [
+        {
+            breakpoint: 991,
+            settings: {
+                arrows: false,
+                slidesToShow: 1,
+            }
+        },
+    ]
 });
 
 
