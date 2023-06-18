@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Services\FileService;
 use App\Services\MlService;
+use Carbon\Doctrine\DateTimeDefaultPrecision;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -127,13 +128,6 @@ class Activity extends Model
      */
     public static function saveData(array $data, ?self $activity = null): void
     {
-        if (array_key_exists('image', $data) && $data['image']) {
-            $data['image'] = FileService::storeImage($data['image'], 'activities', [self::THUMB_SIZE]);
-        }
-        if (array_key_exists('list_image', $data) && $data['list_image']) {
-            $data['list_image'] = FileService::storeImage($data['list_image'], 'activities');
-        }
-
         if ($activity) {
             $activity->update($data);
             $activity->images()->delete();
@@ -142,8 +136,16 @@ class Activity extends Model
             $activity = self::create($data);
         }
 
-        if ($data['ml']['en']['text']) {
+        if (array_key_exists('image', $data) && $data['image']) {
+            $data['image'] = env('APP_URL') . '/storage' . FileService::storeImage($data['image'], 'activities', [self::THUMB_SIZE]);
+            $activity->images()->create(['path' => $data['image']]);
+        }
+        if (array_key_exists('list_image', $data) && $data['list_image']) {
+            $data['list_image'] = env('APP_URL') . '/storage' . FileService::storeImage($data['list_image'], 'activities');
+            $activity->images()->create(['path' => $data['list_image']]);
+        }
 
+        if ($data['ml']['en']['text']) {
             foreach (FileService::getImagesFromHtml($data['ml']['en']['text']) as $image) {
                 $activity->images()->create(['path' => $image]);
             }
